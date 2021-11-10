@@ -1,6 +1,4 @@
-a = []
-b = []
-c = [] 
+(a,b,c) = ([],[],[])
 sum = 0
 n=int(input("Введіть n*n матриці : "))
 for i in range(n) :

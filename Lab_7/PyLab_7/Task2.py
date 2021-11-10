@@ -9,4 +9,5 @@ j_n = 1
 n=int(input("Введіть розмірність матриці : "))
 for i in range(n) :
     a.append([(i+j+2 if (i+1)*(1+j)<3 else sum(j)) for j in range(n)])
-print(a)
+print(a) 
+
