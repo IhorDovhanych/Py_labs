@@ -10,23 +10,17 @@ m=int(input("Введіть кількість стовбців матриці :
 for i in range(n) :
     a.append([random.randint(0,10) for j in range(m)]) 
 print("Ісходна матриця : \n {0} \n".format(a))
-l = m
-for j in range(m) :
-    while l < m :
-        if (j+1)%2==0 :  
-                sum.append(a[i][j])
-                i+=1
-        if i == n :
-            i = 0
-            break
-        l+=1
-    sum.sort()
-    for i in range(n) :
-        if (j+1)%2==0 :
-            a[i].insert(j,sum[i])
-            a[i].pop(j+1)
-    sum.clear()
-    l=i=0
+
+for j in range(1,m,2):
+    for i in range(n):
+        for k in range(n):
+            if a[i][j] > a[k][j]:
+                c = a[k][j]
+                a[k].insert(j,a[i][j])
+                a[i].insert(j,c)
+                a[i].pop(j+1)
+                a[k].pop(j+1)
 print("Посортирована матриця : \n {0}".format(a))
+
 
 
