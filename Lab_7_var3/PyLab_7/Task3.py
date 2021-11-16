@@ -8,4 +8,4 @@ for i in range(n) :
         b = float(input("Введіть значення елементу масива B {0} {1}: ".format(i+1,j+1))) 
         c[i].append(a+b)
     c[i].pop(0)
-print(c) 
+print(*c, sep="\n")
