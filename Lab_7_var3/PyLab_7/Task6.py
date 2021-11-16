@@ -6,8 +6,7 @@ import random
 (a,b,sum,l,j,y) = ([],[],[],0,0,1)
 n = int(input("Введіть кількість рядків матриці : "))
 m = int(input("Введіть кількість стовбців матриці : "))
-for i in range(n) :
-    a.append([int(random.randint(0,1)) for j in range(m)]) 
+a = [[random.randint(0, 1) for j in range(m)] for i in range(n)]
 for i in range(n) :
     while l < m :  
         sum.append(a[i][j])
