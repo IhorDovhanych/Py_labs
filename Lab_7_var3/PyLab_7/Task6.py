@@ -3,25 +3,22 @@ import random
 Дана цілочислова прямокутна матриця.
 Визначити номер рядка, в якому знаходиться найдовша серія однакових елементів.
 """
-(a,b,sum,l,j,y) = ([],[],[],0,0,1)
+(j,y,q,r) = (0,1,0,0)
 n = int(input("Введіть кількість рядків матриці : "))
 m = int(input("Введіть кількість стовбців матриці : "))
 a = [[random.randint(0, 1) for j in range(m)] for i in range(n)]
+print(*a, sep="\n")
 for i in range(n) :
-    while l < m :  
-        sum.append(a[i][j])
-        j+=1
-        l+=1
-    print(sum)
     x=0.1
-    for el in sum :
+    for el in a[i] :
         if x == el :
             y+=1
         x = el
-    b.append(y)
-    j=l=0
+        if y > q:
+            q = y
+            r = i
+    j=0
     y=1
-    sum.clear()
-print("{0} - рядок має найдовшу серію повторення елементів".format(b.index(max(b))+1))
+print("{0} - рядок має найдовшу серію повторення елементів".format(r+1))
     
         
